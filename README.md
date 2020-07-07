@@ -26,7 +26,8 @@ ESLint:
 ```npm run verify``` or ```npm run verify-fix```
 
 ## Deployment
-
+Install terraform https://www.terraform.io/downloads.html
+Make sure you have your AWS account code mentioned in the deploy/terrafor/varables.tf file on line 80
 ```
 cd deploy/terraform
 terraform init
