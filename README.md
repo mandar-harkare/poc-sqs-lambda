@@ -26,8 +26,7 @@ ESLint:
 ```npm run verify``` or ```npm run verify-fix```
 
 ## Deployment
-Install terraform https://www.terraform.io/downloads.html
-Make sure you have your AWS account code mentioned in the deploy/terrafor/varables.tf file on line 80
+
 ```
 cd deploy/terraform
 terraform init
@@ -45,9 +44,7 @@ For example:
 ```bash
 aws sqs send-message --queue-url https://sqs.{aws-region}.amazonaws.com/{accCode}/{queueName} --message-body "HelloWorld"
 ```
-
 Your lambda should be triggered by once this message reaches the queue and then the lambda should process the message, in our case it will just print the message.
 
 ### Where to check the logged messages?
  Login to AWS console >> Search for Lambda >> Type in your lambda name >> Click on Monitoring >> Click on cloud watch logs >> Select the latest log group and you should see your message.
- 
