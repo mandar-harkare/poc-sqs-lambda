@@ -52,13 +52,13 @@ Your lambda should be triggered by once this message reaches the queue and then 
  
  ## Locust
  
- ## Usage without UI
+ ### Usage without UI
 
 ```bash
 locust -f locustfile.py --host=host --no-web -t 1m --csv=infra -c 1000 -r 100
 ```
 
-## Usage with UI
+### Usage with UI
 
 ```bash
 locust -f locustfile.py --host=host
