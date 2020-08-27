@@ -50,7 +50,7 @@ Your lambda should be triggered by once this message reaches the queue and then 
 ### Where to check the logged messages?
  Login to AWS console >> Search for Lambda >> Type in your lambda name >> Click on Monitoring >> Click on cloud watch logs >> Select the latest log group and you should see your message.
  
- # Locust
+ ## Locust
  
  ## Usage without UI
 
