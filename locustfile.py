@@ -85,51 +85,15 @@ class WebsiteTasks(TaskSet):
             headers['X-Amz-Security-Token'] = sts_token
          
         return headers
-         
-    # def on_start(self):
-    #     infrastructure = {
-    #         "infra_id": "59e0f964-ae88-4a86-97ea-551abd080700",
-    #         "tenantId": "e29b82a5-8fec-4e53-8a4b-e9e51ce53dd1",
-    #         "type": "NGFW",
-    #         "instanceId": "3548248c-e79b-4422-a77e-f35b2afa54c1",
-    #         "region": "us-east-2"
-    #     }
-    #     with open('getInfrastructure.graphql', 'r') as graphql_file:
-    #         query = graphql_file.read()
-    #         if infrastructure:
-    #             json = {
-    #                 'query': query,
-    #                 'variables': infrastructure
-    #             }
-    #         else:
-    #             json = {
-    #                 'query': query
-    #             }
-    #     headers = self.create_auth(json, "https://infrastructure-fa3819.msvokxavdlwatqovcwze.com/graphql", 'execute-api', "us-east-2")
-    #     self.client.post("https://infrastructure-fa3819.msvokxavdlwatqovcwze.com/graphql", json=json, headers=headers)
+
      
     @task
     def index(self):
-        infrastructure = {
-            "infra_id": "59e0f964-ae88-4a86-97ea-551abd080700",
-            "tenantId": "e29b82a5-8fec-4e53-8a4b-e9e51ce53dd1",
-            "type": "NGFW",
-            "instanceId": "3548248c-e79b-4422-a77e-f35b2afa54c1",
-            "region": "us-east-2"
+        json = {
+            'payload': payload
         }
-        with open('getInfrastructure.graphql', 'r') as graphql_file:
-            query = graphql_file.read()
-            if infrastructure:
-                json = {
-                    'query': query,
-                    'variables': infrastructure
-                }
-            else:
-                json = {
-                    'query': query
-                }
-        headers = self.create_auth(json, "https://infrastructure-fa3819.msvokxavdlwatqovcwze.com/graphql", 'execute-api', "us-east-2")
-        self.client.post("https://infrastructure-fa3819.msvokxavdlwatqovcwze.com/graphql", json=json, headers=headers)
+        headers = self.create_auth(json, url, 'execute-api', "us-east-2")
+        self.client.post(url, json=json, headers=headers)
  
  
 class WebsiteUser(HttpLocust):
